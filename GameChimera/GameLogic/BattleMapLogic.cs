@@ -12,11 +12,9 @@ namespace GameChimera.GameLogic
     public class BattleMapLogic
     {
         private BattleMap map;
-        
         public List<IToken> WalkArea(IToken unit)
         {
-            var area = new List<TokenValue>();
-            area.Add(new TokenValue(unit.X, unit.Y));
+            var area = new List<TokenValue>() { new TokenValue(unit.X, unit.Y) };
             var areaArray = new TokenValue[map.Horizontal, map.Vertical];
             while (area.Count != 0)
             {
@@ -73,7 +71,6 @@ namespace GameChimera.GameLogic
             }
             return resultToken;
         }
-
         public float EvaluateStep(TokenValue startPosition, TokenValue newPosition)
         {
             return startPosition.Value - 1.0f;

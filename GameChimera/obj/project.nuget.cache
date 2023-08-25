@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "xXLiIDywk3+Gr7yQeNff0rKrnpztLM9B5IJrQxpEcCt6+icNzAzVb+Avb5xr59u/IKpa8ZI5LurdumyVOnOcIw==",
+  "dgSpecHash": "IK4uMKonp4WIVgwB+REFTQmj1CTMuMVtOkvsW6pGDk3oSi7U+bcSbuX2tuXz5+/giEqi5MyGpUkJFTjrDIEx8Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\WorkPlace\\source\\repos\\GameChimera\\GameChimera\\GameChimera.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\WorkPlace\\.nuget\\packages\\godot.sourcegenerators\\4.1.1\\godot.sourcegenerators.4.1.1.nupkg.sha512",
+    "C:\\Users\\WorkPlace\\.nuget\\packages\\godotsharp\\4.1.1\\godotsharp.4.1.1.nupkg.sha512",
+    "C:\\Users\\WorkPlace\\.nuget\\packages\\godotsharpeditor\\4.1.1\\godotsharpeditor.4.1.1.nupkg.sha512"
+  ],
   "logs": []
 }
