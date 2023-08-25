@@ -1,5 +1,7 @@
+using GameChimera.Interface;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -9,19 +11,23 @@ namespace GameChimera.Fields
     {
         public string Name
         {get; }
-        public List<IGameObjects> Objects
+        public List<IGameObject> Objects
         { get; }
-        
-        public Level(string Name, LevelTypes type)
+
+        public List<IGameObject> objects => throw new NotImplementedException();
+
+        public LevelType type => throw new NotImplementedException();
+
+        public Level(string Name, LevelType type)
         {
-            Objects = new List<IGameObjects>();
+            Objects = new List<IGameObject>();
         }
 
         public bool CheckIsUnitInPosition(Point pos)
         {
             foreach(var unit in Objects)
             {
-                if (unit.position == pos)
+                if (unit.Position == pos)
                     return true;
             }
             return false;
@@ -31,23 +37,23 @@ namespace GameChimera.Fields
         {
             foreach(var unit in Objects)
             {
-                if (unit.position == pos)
+                if (unit.Position == pos)
                     return unit;
             }
-            throw ;
+            throw new  Exception() ;
         }
 
         public void AddObject(IGameObject unit)
         {
             Objects.Add(unit);
-            unit.parent = this;
+            unit.Parent = this;
         }
 
         public void RemoveObjectByPosition(Point pos)
         {
             foreach(var unit in Objects)
             {
-                if (unit.position == pos)
+                if (unit.Position == pos)
                 {
                     Objects.Remove(unit);
                     unit.Remove();

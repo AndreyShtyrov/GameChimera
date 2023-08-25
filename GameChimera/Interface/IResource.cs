@@ -11,7 +11,7 @@ namespace GameChimera.Interface
         public ResourceType Type { get; }
 
         public void Spend();
-        public void Retaint();
+        public void Retain();
     }
 
     public enum ResourceType

@@ -6,7 +6,7 @@ using GameChimera.Interface;
 
 namespace GameChimera.Interface
 {
-    enum LevelType {
+    public enum LevelType {
         Visible = 0,
         Unvisible = 1,
     }
