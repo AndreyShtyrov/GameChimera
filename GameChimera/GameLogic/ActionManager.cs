@@ -4,12 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameChimera.Interface
+namespace GameChimera.GameLogic
 {
-    public interface IFieldTile: IToken
+    public class ActionManager
     {
-        string Name 
-        { get; }
-
     }
 }

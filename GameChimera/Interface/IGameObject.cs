@@ -11,9 +11,6 @@ namespace GameChimera.Interface
         public int index
         {get; }
 
-        public ILevel Parent
-        {get; set; }
-
         public void Remove();
     }
 }

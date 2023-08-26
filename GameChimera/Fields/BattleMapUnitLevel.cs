@@ -5,25 +5,26 @@ using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using Godot;
+using GameChimera.Generic;
 
 namespace GameChimera.Fields
 {
    
-    public class Level: ILevel
+    public class BattleMapUnitLevel: ILevel<BattleMapUnit>
     {
+        
         public string Name
         {get; }
 
-        public List<IGameObject> Objects
+        public List<BattleMapUnit> Objects
         { get; }
-
-        public List<IGameObject> objects => throw new NotImplementedException();
 
         public LevelType type => throw new NotImplementedException();
 
-        public Level(string Name, LevelType type)
+        public BattleMapUnitLevel(string Name, LevelType type)
         {
-            Objects = new List<IGameObject>();
+            Objects = new List<BattleMapUnit>();
+            this.Name = Name;
         }
 
         public bool CheckIsUnitInPosition(Point pos)
@@ -36,7 +37,7 @@ namespace GameChimera.Fields
             return false;
         }
 
-        public IGameObject GetObjectByPosition(Point pos)
+        public BattleMapUnit GetObjectByPosition(Point pos)
         {
             foreach(var unit in Objects)
             {
@@ -46,7 +47,7 @@ namespace GameChimera.Fields
             throw new  Exception() ;
         }
 
-        public void AddObject(IGameObject unit)
+        public void AddObject(BattleMapUnit unit)
         {
             Objects.Add(unit);
             unit.Parent = this;

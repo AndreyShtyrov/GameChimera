@@ -11,9 +11,10 @@ namespace GameChimera.Interface
         Unvisible = 1,
     }
 
-    public interface ILevel
+    public interface ILevel<T>
+        where T : IToken
     {
-        public List<IGameObject> objects
+        public List<T> Objects
         {get;}
 
         public string Name {get;}

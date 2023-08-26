@@ -8,21 +8,22 @@ using GameChimera;
 using GameChimera.Fields;
 using System.Drawing;
 using GameChimera.Interface;
+using GameChimera.Generic;
 
 namespace GameChimera.Fields
 {
     public class BattleMap
     {
-        public Level GroundUnits
+        public BattleMapUnitLevel GroundUnits
         {get;}
-        public Level FlyingUnits
+        public BattleMapUnitLevel FlyingUnits
         {get;}
-        public Level GroundField
+        public BattleMapFieldLevel GroundField
         {get;}
-        public Level Triggers
+        public BattleMapUnitLevel Triggers
         {get; }
 
-        public Level Buildings 
+        public BattleMapUnitLevel Buildings 
         {get; }
         public string Name 
         {get; set;}
@@ -33,16 +34,16 @@ namespace GameChimera.Fields
         public int Vertical
         { get; }
 
-        public BattleMap(int horizontalSize, int VerticalSize)
+        public BattleMap(int horizontalSize, int verticalSize)
         {
-            GroundField = new Level("GroundField", LevelType.Visible);
-            Triggers = new Level("GroundField", LevelType.Unvisible);
+            GroundField = new BattleMapFieldLevel("GroundField", horizontalSize, verticalSize);
+            Triggers = new BattleMapUnitLevel("GroundField", LevelType.Unvisible);
             Name = "New Map";
-            FlyingUnits = new Level("GroundField", LevelType.Visible);
-            GroundUnits = new Level("GroundField", LevelType.Visible);
-            Buildings = new Level("GroundField", LevelType.Visible);
+            FlyingUnits = new BattleMapUnitLevel("GroundField", LevelType.Visible);
+            GroundUnits = new BattleMapUnitLevel("GroundField", LevelType.Visible);
+            Buildings = new BattleMapUnitLevel("GroundField", LevelType.Visible);
             Horizontal = horizontalSize;
-            Vertical = VerticalSize;
+            Vertical = verticalSize;
         }
 
         public static BattleMap Load(string file)

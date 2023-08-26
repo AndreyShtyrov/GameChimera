@@ -13,4 +13,8 @@
     <PackageReference Include="GodotSharpEditor" Version="4.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="GameLogic\Actions\" />
+  </ItemGroup>
+
 </Project>
